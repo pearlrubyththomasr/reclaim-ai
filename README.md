@@ -1,4 +1,3 @@
-````markdown
 # RECLAIM AI
 
 ### Autonomous Revenue Recovery Agent
@@ -7,7 +6,7 @@
 
 ---
 
-## 🎯 Problem
+##  Problem
 
 Payment failures and other revenue-leakage events can cause merchants to lose otherwise recoverable revenue.
 
@@ -26,7 +25,7 @@ RECLAIM aims to move beyond fixed recovery rules by combining **machine learning
 
 ---
 
-## 💡 Solution
+##  Solution
 
 RECLAIM continuously evaluates revenue-at-risk events and determines the most appropriate recovery strategy.
 
@@ -52,7 +51,7 @@ Outcome Verification
 Revenue Recovered
       ↓
 Monitoring & Learning
-````
+
 
 The system can choose from bounded actions such as:
 
