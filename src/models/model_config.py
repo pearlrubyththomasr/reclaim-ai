@@ -1,0 +1,7 @@
+MODEL_NAME = "logistic_regression"
+
+MODEL_VERSION = "1.0.0"
+
+DECISION_THRESHOLD = 0.35
+
+RANDOM_STATE = 42
