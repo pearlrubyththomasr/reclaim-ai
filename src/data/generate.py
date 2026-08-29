@@ -96,21 +96,51 @@ customer_ids = [
     for i in range(1, N_CUSTOMERS + 1)
 ]
 
+# Total historical transactions
+previous_transactions = np.random.randint(
+    1,
+    30,
+    N_CUSTOMERS,
+)
+
+# Generate a failure rate for each customer.
+# Beta distribution creates mostly normal customers
+# with a smaller number of high-failure customers.
+customer_failure_rates = np.random.beta(
+    a=2,
+    b=8,
+    size=N_CUSTOMERS,
+)
+
+# Number of historical failures cannot exceed
+# the number of historical transactions.
+previous_failures = np.minimum(
+    np.random.binomial(
+        previous_transactions,
+        customer_failure_rates,
+    ),
+    previous_transactions,
+)
+
+# Everything that wasn't a failure was successful.
+previous_successes = (
+    previous_transactions - previous_failures
+)
+
+# Previous successful recoveries cannot exceed
+# previous failures.
+previous_recovery_successes = np.array([
+    np.random.randint(0, failures + 1)
+    for failures in previous_failures
+])
+
 customer_profiles = pd.DataFrame({
     "customer_id": customer_ids,
-    "previous_transactions": np.random.randint(1, 30, N_CUSTOMERS),
-    "previous_failures": np.random.randint(0, 8, N_CUSTOMERS),
-    "previous_recovery_successes": np.random.randint(0, 6, N_CUSTOMERS),
+    "previous_transactions": previous_transactions,
+    "previous_successes": previous_successes,
+    "previous_failures": previous_failures,
+    "previous_recovery_successes": previous_recovery_successes,
 })
-
-customer_profiles["previous_successes"] = (
-    customer_profiles["previous_transactions"]
-    - customer_profiles["previous_failures"]
-)
-
-customer_profiles["previous_successes"] = (
-    customer_profiles["previous_successes"].clip(lower=0)
-)
 
 customer_profiles["customer_failure_rate"] = (
     customer_profiles["previous_failures"]
