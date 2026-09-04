@@ -67,6 +67,8 @@ data/processed/
 
 mlruns/
 mlartifacts/
+mlflow.db
+mlflow.db-journal
 
 # ==================================================
 # Temporary files

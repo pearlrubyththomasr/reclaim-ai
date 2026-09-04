@@ -5,3 +5,8 @@ scikit-learn
 matplotlib
 seaborn
 pyyaml
+xgboost
+faker
+mlflow
+razorpay
+python-dotenv
