@@ -756,47 +756,7 @@ $env:PYTHONPATH="src"
 python -m demo.investor_demo
 ```
 
----
-
-# 21. Demo flow for judges
-
-The recommended presentation flow is:
-
-```text
-Investor Demo
-     ↓
-Run Demo
-     ↓
-Network failure → RETRY
-     ↓
-Insufficient funds → PAYMENT LINK
-     ↓
-Merchant error → NO ACTION
-     ↓
-Revenue Impact
-     ↓
-Overview
-     ↓
-AI Agent
-     ↓
-MLOps
-```
-
-### Opening line
-
-> "Every failed payment is not worth recovering."
-
-### Core pitch
-
-> "RECLAIM predicts which failed payments are economically worth pursuing, chooses a failure-aware intervention, and knows when the correct action is no action."
-
-### Closing line
-
-> **"RECLAIM doesn't recover everything. It recovers what is worth recovering."**
-
----
-
-# 22. Safety and operational boundaries
+# 21. Safety and operational boundaries
 
 RECLAIM intentionally uses bounded deterministic policies around payment actions.
 
@@ -816,7 +776,7 @@ The current demonstration uses controlled synthetic outcomes for recovery execut
 
 ---
 
-# 23. Technology Stack
+# 22. Technology Stack
 
 | Layer | Technology |
 |---|---|
@@ -834,7 +794,7 @@ The current demonstration uses controlled synthetic outcomes for recovery execut
 
 ---
 
-# 24. Key takeaway
+# 23. Key takeaway
 
 RECLAIM treats payment recovery as a **closed-loop revenue optimization problem**:
 
